@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --primary: #1e3a8a;
   --accent: #93c5fd;
@@ -5,26 +11,28 @@
   --dark: #0f172a;
 }
 
-/* ================== BODY ================== */
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(180deg,#1e3a8a,#3b82f6);
+  background: linear-gradient(180deg, #1e3a8a, #3b82f6);
   line-height: 1.7;
 }
 
-/* ================== COVER ================== */
+.hidden {
+  display: none;
+}
+
+/* ===== COVER ===== */
 #cover {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
     url("images/cover.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   z-index: 9999;
   transition: opacity 1s ease, transform 1s ease;
 }
@@ -32,27 +40,24 @@ body {
 .cover-content {
   text-align: center;
   color: white;
-  max-width: 500px;
   padding: 20px;
-  animation: fadeSlide 1.5s ease forwards;
+  animation: fadeSlide 1.4s ease forwards;
 }
 
 @keyframes fadeSlide {
   from { opacity: 0; transform: translateY(40px); }
-  to   { opacity: 1; transform: translateY(0); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .cover-subtitle {
   font-size: 13px;
   letter-spacing: 2px;
-  text-transform: uppercase;
   opacity: .85;
 }
 
 .cover-title {
   font-family: 'Playfair Display', serif;
   font-size: 48px;
-  margin: 8px 0;
 }
 
 .cover-date {
@@ -69,95 +74,74 @@ body {
 }
 
 .btn-open {
-  margin-top: 36px;
-  padding: 14px 38px;
+  margin-top: 32px;
+  padding: 14px 36px;
   border-radius: 999px;
   background: white;
   color: var(--primary);
   font-weight: 600;
   border: none;
   cursor: pointer;
-  font-size: 15px;
-  transition: all .3s ease;
 }
 
-.btn-open:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(0,0,0,.4);
-}
-
-/* ================== MAIN CONTENT ================== */
-.hidden { display: none; }
-
-#mainContent {
-  padding: 2rem 0;
-}
-
-/* ================== CARD / SECTION ================== */
+/* ===== CONTENT ===== */
 section {
   background: white;
-  margin: 1.8rem auto;
-  padding: 1.9rem;
   max-width: 720px;
+  margin: 1.8rem auto;
+  padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 20px 45px rgba(0,0,0,.15);
   text-align: center;
   color: var(--dark);
 }
 
-h1,h2 {
+h2 {
   font-family: 'Playfair Display', serif;
   color: var(--primary);
+  margin-bottom: .8rem;
 }
 
-h2 { font-size: 1.6rem; margin-bottom: .8rem; }
-
-/* ================== COUNTDOWN ================== */
 #countdown {
   font-size: 1.3rem;
   font-weight: 500;
 }
 
-/* ================== BUTTON CENTER ================== */
-.btn-center {
-  display: flex;
-  justify-content: center;
-  margin-top: 14px;
-}
-
-a,button {
-  text-decoration: none;
-  background: #3b82f6;
-  color: white;
-  border-radius: 999px;
-  padding: 12px 28px;
-  border: none;
-  font-size: .95rem;
-  cursor: pointer;
-}
-
-/* ================== FORM ================== */
+/* ===== FORM ===== */
 .form-group {
   max-width: 480px;
   margin: 0 auto;
 }
 
-input,textarea {
+input, textarea, select {
   width: 100%;
   padding: .8rem;
+  margin-bottom: .7rem;
   border-radius: 12px;
   border: 1px solid #cbd5e1;
-  margin-bottom: .7rem;
   font-family: inherit;
 }
 
-/* ================== UCAPAN ================== */
+button, a {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 28px;
+  cursor: pointer;
+}
+
+.btn-center {
+  display: flex;
+  justify-content: center;
+}
+
 .ucapan-card {
   background: #f8fafc;
   padding: 14px;
   border-radius: 12px;
-  text-align: left;
   margin-top: 10px;
+  text-align: left;
 }
 
 .ucapan-card h4 {
@@ -165,24 +149,21 @@ input,textarea {
   margin-bottom: 4px;
 }
 
-/* ================== MAP ================== */
 iframe {
   width: 100%;
-  height: 320px;
-  border-radius: 16px;
+  height: 300px;
+  border-radius: 14px;
   border: none;
 }
 
-/* ================== FOOTER ================== */
 footer {
   text-align: center;
   color: #e5e7eb;
-  padding: 2rem;
   font-size: .85rem;
+  padding: 2rem;
 }
 
-/* ================== MOBILE ================== */
-@media (max-width:768px){
+@media (max-width:768px) {
   .cover-title { font-size: 36px; }
   section { margin: 1.2rem; }
 }
