@@ -82,3 +82,20 @@ function copyRek() {
   navigator.clipboard.writeText("6862010115207530");
   alert("Nomor rekening berhasil disalin");
 }
+
+
+/* ===== SCROLL SECTION ANIMATION ===== */
+const sections = document.querySelectorAll('.section-animate');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target); // animasi sekali aja
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+sections.forEach(section => observer.observe(section));
