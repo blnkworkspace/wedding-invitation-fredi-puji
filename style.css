@@ -242,3 +242,34 @@ section h2 {
   font-size: 0.9rem;
 }
 
+/* Fokus ke section mempelai */
+.section-couple h2 {
+  margin-top: 1.4rem;
+}
+
+.section-couple p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.section-animate.show {
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.section-divider {
+  width: 60px;
+  height: 2px;
+  background: #e5e7eb;
+  margin: 1.5rem auto;
+  border-radius: 999px;
+}
+
+.section-animate.show .btn-center button {
+  animation: pulseOnce .8s ease;
+}
+
+@keyframes pulseOnce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
