@@ -76,3 +76,9 @@ function kirimUcapan() {
   document.getElementById("nama").value = "";
   document.getElementById("pesan").value = "";
 }
+
+
+function copyRek() {
+  navigator.clipboard.writeText("6862010115207530");
+  alert("Nomor rekening berhasil disalin");
+}
