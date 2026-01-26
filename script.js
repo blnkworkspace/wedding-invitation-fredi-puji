@@ -6,14 +6,17 @@ function openInvitation() {
   const content = document.getElementById("mainContent");
 
   cover.style.opacity = "0";
-  cover.style.transform = "scale(1.1)";
+  cover.style.transform = "translateY(-40px)";
 
   setTimeout(() => {
     cover.style.display = "none";
     content.classList.remove("hidden");
     document.body.style.overflow = "auto";
-  }, 800);
+  }, 1000);
 }
+
+/* LOCK SCROLL */
+document.body.style.overflow = "hidden";
 
 // LOCK SCROLL PAS DI COVER
 document.body.style.overflow = "hidden";
