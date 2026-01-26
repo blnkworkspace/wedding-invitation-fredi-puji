@@ -256,13 +256,15 @@ section h2 {
   transition: opacity .8s ease, transform .8s ease;
 }
 
-.section-divider {
+.soft-divider {
   width: 60px;
   height: 2px;
   background: #e5e7eb;
   margin: 1.5rem auto;
   border-radius: 999px;
 }
+
+
 
 .section-animate.show .btn-center button {
   animation: pulseOnce .8s ease;
@@ -273,3 +275,7 @@ section h2 {
   50% { transform: scale(1.03); }
   100% { transform: scale(1); }
 }
+
+section { border-radius: 22px; }
+button, a { border-radius: 999px; }
+input, textarea, select { border-radius: 14px; }
