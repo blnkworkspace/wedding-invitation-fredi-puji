@@ -1,0 +1,583 @@
+/* style.css - FIXED VERSION */
+
+:root {
+  --primary: #1e3a8a;
+  --secondary: #3b82f6;
+  --accent: #10b981;
+  --text: #0f172a;
+  --light: #f8fafc;
+  
+  /* Font variables */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-cursive: 'Dancing Script', cursive;
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 1rem;
+  color: var(--text);
+}
+
+/* SECTIONS */
+section {
+  background: #ffffff;
+  margin: 1.5rem auto;
+  padding: 2rem;
+  max-width: 800px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+section + section {
+  margin-top: 2rem;
+}
+
+/* TYPOGRAPHY */
+h1, h2 {
+  font-family: var(--font-heading);
+  color: var(--primary);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  /* FIX: Hapus text-fill-color, pakai color biasa dengan fallback */
+  color: #1e3a8a; /* Fallback untuk browser tanpa gradient text */
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+}
+
+/* NAMA MEMPELAI KHUSUS */
+.mempelai-nama {
+  font-family: var(--font-cursive);
+  font-size: 2.8rem;
+  margin: 1rem 0;
+  color: var(--primary);
+  text-align: center;
+  font-weight: 500;
+}
+
+p {
+  text-align: center;
+  margin: 0.8rem 0;
+  line-height: 1.7;
+  color: #334155;
+  font-family: var(--font-body);
+}
+
+.dan {
+  font-family: var(--font-cursive);
+  font-size: 2rem;
+  color: var(--secondary);
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+/* HERO SECTION */
+.hero {
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  color: white;
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.hero h1 {
+  /* FIX: Hapus text-fill-color untuk hero */
+  color: white;
+  background: none;
+  background-clip: border-box;
+  -webkit-background-clip: border-box;
+  -webkit-text-fill-color: white;
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.1rem;
+}
+
+.hero strong {
+  color: #e0f2fe;
+  font-size: 1.2rem;
+}
+
+/* COUNTDOWN */
+#countdown {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--primary);
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-radius: 15px;
+  margin: 1rem 0;
+  border: 2px solid #bfdbfe;
+  font-family: var(--font-body);
+  letter-spacing: 1px;
+}
+
+/* BUTTONS & LINKS */
+a, button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
+  font-family: var(--font-body);
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+a:hover, button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(30, 58, 138, 0.3);
+  opacity: 0.95;
+}
+
+.btn-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* MAP SECTION */
+.map-container {
+  position: relative;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  margin: 1.5rem 0;
+  border: 3px solid white;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+  display: block;
+}
+
+.map-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.map-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  color: white;
+  padding: 1rem 1.8rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+.map-btn.secondary {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.map-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 58, 138, 0.25);
+}
+
+.address-box {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border-left: 4px solid var(--primary);
+  text-align: center;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+.address-box p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.address-box strong {
+  color: var(--primary);
+  display: block;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.coordinates {
+  display: inline-block;
+  background: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-top: 1rem;
+  border: 1px dashed #cbd5e1;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+/* FORM */
+.form-group {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  font-family: inherit;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  background: white;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-group button {
+  display: block;
+  margin: 1.5rem auto 0;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+/* UCAPAN SECTION */
+#listUcapanContainer {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 15px;
+  border: 2px solid #e2e8f0;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+#listUcapanContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+#listUcapanContainer::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+#listUcapanContainer::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+#listUcapanContainer::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.ucapan-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid var(--secondary);
+  animation: fadeIn 0.5s ease-out;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+.ucapan-card:last-child {
+  margin-bottom: 0;
+}
+
+.ucapan-card h4 {
+  margin: 0 0 0.5rem;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  font-family: var(--font-heading);
+}
+
+.ucapan-card p {
+  text-align: left;
+  margin: 0;
+  color: #475569;
+  line-height: 1.6;
+  font-family: var(--font-body);
+}
+
+.ucapan-card small {
+  display: block;
+  text-align: left;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+/* REKENING SECTION */
+#rek {
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  color: var(--primary);
+  background: linear-gradient(135deg, #f0f9ff, #e0f7ff);
+  padding: 1.2rem;
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  font-family: 'Courier New', monospace;
+  border: 2px dashed #bfdbfe;
+  text-align: center;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  body {
+    padding: 0.5rem;
+  }
+  
+  section {
+    padding: 1.5rem;
+    margin: 1rem auto;
+    border-radius: 16px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .mempelai-nama {
+    font-size: 2.2rem;
+  }
+  
+  .dan {
+    font-size: 1.8rem;
+  }
+  
+  #countdown {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+  
+  .map-container iframe {
+    height: 250px;
+  }
+  
+  .map-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .map-btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+  
+  #rek {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+  
+  #listUcapanContainer {
+    max-height: 300px;
+  }
+  
+  a, button {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 1.2rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+  
+  .mempelai-nama {
+    font-size: 1.8rem;
+  }
+  
+  .dan {
+    font-size: 1.5rem;
+  }
+  
+  #countdown {
+    font-size: 1.2rem;
+  }
+  
+  .map-container iframe {
+    height: 200px;
+  }
+  
+  .address-box {
+    padding: 1rem;
+  }
+}
+
+/* SPECIAL STYLES FOR WHATSAPP BUTTON */
+section a[href*="wa.me"] {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.1rem;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+/* COPY BUTTON */
+button[onclick="copyRek()"] {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  padding: 1rem 2rem;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+
+/* EMPTY STATE FOR UCAPAN */
+#listUcapan:empty::before {
+  content: 'Belum ada ucapan. Jadilah yang pertama!';
+  display: block;
+  text-align: center;
+  color: #94a3b8;
+  font-style: italic;
+  padding: 2rem;
+}
+
+/* LOADING STATE */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* FALLBACK untuk browser tanpa gradient text support */
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  h1 {
+    background: none;
+    color: var(--primary);
+  }
+}
