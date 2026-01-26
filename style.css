@@ -279,3 +279,7 @@ section h2 {
 section { border-radius: 22px; }
 button, a { border-radius: 999px; }
 input, textarea, select { border-radius: 14px; }
+
+.btn-center a {
+  text-decoration: none;
+}
