@@ -5,173 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Undangan Pernikahan Fredi & Puji</title>
 
- <!-- GOOGLE FONT -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- PAKAI INI YANG LENGKAP -->
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- LINK CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- COVER -->
+
+<!-- ================= COVER ================= -->
 <div id="cover">
-  <div class="overlay"></div>
-
   <div class="cover-content">
-    <p class="small">Undangan Pernikahan</p>
-    <h1>Fredi & Puji</h1>
-    <p class="date">9 Februari 2026</p>
-
-    <button onclick="openInvitation()">Buka Undangan</button>
+    <p class="cover-subtitle">Undangan Pernikahan</p>
+    <h1 class="cover-title">Fredi & Puji</h1>
+    <p class="cover-date">9 Februari 2026</p>
+    <div class="divider"></div>
+    <button class="btn-open" onclick="openInvitation()">Buka Undangan</button>
   </div>
 </div>
 
-<!-- ISI UNDANGAN -->
+<!-- ================= MAIN CONTENT ================= -->
 <div id="mainContent" class="hidden">
-<!-- SEMUA KONTEN UNDANGAN LU TARUH DI SINI -->
 
-<!-- HERO -->
-<section class="hero">
-  <h1>Undangan Pernikahan</h1>
-  <p>Kepada Yth.</p>
-  <p><strong>Bapak / Ibu / Saudara/i</strong></p>
-  <p>Di Tempat</p>
-</section>
+  <section>
+    <p>Assalamu’alaikum Warahmatullahi Wabarakatuh</p>
+    <p>
+      Dengan memohon rahmat dan ridho Allah SWT,
+      kami mengundang Bapak/Ibu/Saudara/i
+      untuk menghadiri pernikahan kami:
+    </p>
+  </section>
 
-<!-- SALAM -->
-<section>
-  <p>Assalamu’alaikum Warahmatullahi Wabarakatuh</p>
-  <p>
-    Dengan memohon rahmat dan ridho Allah SWT,
-    kami bermaksud mengundang Bapak/Ibu/Saudara/i
-    untuk menghadiri pernikahan putra-putri kami:
-  </p>
-</section>
+  <section>
+    <h2>Fredi Supriyanto</h2>
+    <p>Putra dari Bapak Yamto & Ibu Narsi</p>
+    <p>&</p>
+    <h2>Puji Wijayanti</h2>
+    <p>Putri dari Bapak Sunarwan & Ibu Suhartini (Almh)</p>
+  </section>
 
-<!-- MEMPELAI -->
-<section>
-  <h2>Fredi Supriyanto S.O.Per</h2>
-  <p>Putra dari Bapak Yamto & Ibu Narsi</p>
-  <p>&</p>
-  <h2>Puji Wijayanti</h2>
-  <p>Putri dari Bapak Sunarwan & Ibu Suhartini (Almh)</p>
-</section>
+  <section>
+    <h2>Menuju Hari Bahagia</h2>
+    <div id="countdown"></div>
+  </section>
 
-<!-- COUNTDOWN -->
-<section>
-  <h2>Menuju Hari Bahagia</h2>
-  <div id="countdown"></div>
-</section>
+  <section>
+    <h2>Detail Acara</h2>
+    <p><strong>Senin, 9 Februari 2026</strong></p>
+    <p>Pukul 10.00 WIB</p>
+    <p>
+      Klunggean RT 11 RW 04<br>
+      Sambungmacan, Sragen
+    </p>
+  </section>
 
-<!-- DETAIL -->
-<section>
-  <h2>Detail Acara</h2>
-  <p><strong>Hari / Tanggal</strong></p>
-  <p>Senin, 10 Februari 2026</p>
-  <p><strong>Waktu</strong></p>
-  <p>Pukul 10.00 WIB</p>
-  <p><strong>Tempat</strong></p>
-  <p>
-    Klunggean RT 11 RW 04, Klumbean, Plumbon<br>
-    Kec. Sambungmacan, Kab. Sragen
-  </p>
-</section>
+  <section>
+    <h2>Lokasi Acara</h2>
+    <iframe
+      src="https://www.google.com/maps?q=-7.359812,111.067241&output=embed"
+      loading="lazy">
+    </iframe>
 
-<!-- MAP -->
-<section>
-  <h2>📍 Lokasi Acara</h2>
-  
-  <div class="map-container">
-    <!-- SIMPLE EMBED - HANYA PETA -->
-    <iframe 
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.9508048481325!2d111.064660!3d-7.359812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a033d94d73a0b%3A0xdbb8dde3c02039b2!2sAndalan%20home!5e0!3m2!1sid!2sid!4v1700000000!5m2!1sid!2sid" 
-  width="100%" 
-  height="450" 
-  style="border:0;" 
-  allowfullscreen="" 
-  loading="lazy" 
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-  </div>
-  
-  <div class="map-links">
-    <a href="https://www.google.com/maps/place/Andalan+home/@-7.359812,111.06466,17z/data=!3m1!4b1!4m6!3m5!1s0x2e7a033d94d73a0b:0xdbb8dde3c02039b2!8m2!3d-7.359812!4d111.06466!16s%2Fg%2F11v5q0wvqm?entry=ttu" 
-   target="_blank">
-  📍 Buka di Google Maps
-</a>
-    <a href="https://www.google.com/maps/place/Andalan+home/@-7.359812,111.06466,17z/data=!3m1!4b1!4m6!3m5!1s0x2e7a033d94d73a0b:0xdbb8dde3c02039b2!8m2!3d-7.359812!4d111.06466!16s%2Fg%2F11v5q0wvqm?entry=ttu"  
-       target="_blank" 
-       class="map-btn secondary">
-      🚗 Dapatkan Rute
-    </a>
-  </div>
-
-</section>
-
-<!-- KONFIRMASI -->
-<section>
-  <h2>Konfirmasi Kehadiran</h2>
-  <p>Mohon konfirmasi kehadiran melalui WhatsApp</p>
-  <div class="btn-center">
-    <a href="https://wa.me/6281290803231?text=Assalamu’alaikum%20saya%20akan%20hadir%20di%20acara%20pernikahan%20Fredi%20dan%20Puji" target="_blank">
-      Konfirmasi via WhatsApp
-    </a>
-  </div>
-</section>
-
-<!-- HADIAH -->
-<!-- HADIAH -->
-<section>
-  <h2>Tanda Kasih</h2>
-  <p>BRI</p>
-  <p id="rek"><strong>6862010115207530</strong></p> 
-  <p>a.n Fredi Supriyanto</p>
-  <div class="btn-center">
-    <button onclick="copyRek()">Salin Nomor Rekening</button>
-  </div>
-</section>
-
-<!-- UCAPAN -->
-<section>
-  <h2>Ucapan & Doa</h2>
-  <form id="formUcapan">
-    <div class="form-group">
-      <input id="nama" placeholder="Nama" required>
-      <textarea id="pesan" placeholder="Tulis ucapan & doa" required></textarea>
-      <button type="submit">Kirim Ucapan</button>
+    <div class="btn-center">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=-7.359812,111.067241" target="_blank">
+        📍 Buka Rute
+      </a>
     </div>
-  </form>
-  <div id="listUcapanContainer">
-    <div id="listUcapan"></div>
-  </div>
-</section>
+  </section>
 
-<!-- PENUTUP -->
-<section>
-  <p>
-    Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i
-    kami ucapkan terima kasih.
-  </p>
-  <p>
-    Wassalamu’alaikum Warahmatullahi Wabarakatuh
-  </p>
-</section>
-<!-- FOOTER -->
-<footer>
-  <p style="opacity:.8">
+  <!-- ===== RSVP FORM ===== -->
+  <section>
+    <h2>Konfirmasi Kehadiran</h2>
+
+    <div class="form-group">
+      <input id="rsvpNama" placeholder="Nama">
+      <select id="rsvpStatus">
+        <option value="">Pilih Kehadiran</option>
+        <option value="Hadir">Hadir</option>
+        <option value="Tidak Hadir">Tidak Hadir</option>
+      </select>
+      <input id="rsvpJumlah" type="number" min="1" placeholder="Jumlah Tamu (opsional)">
+      <textarea id="rsvpPesan" placeholder="Pesan (opsional)"></textarea>
+      <button onclick="kirimRSVP()">Kirim Konfirmasi</button>
+    </div>
+
+    <div id="listRSVP"></div>
+  </section>
+
+  <!-- ===== UCAPAN ===== -->
+  <section>
+    <h2>Ucapan & Doa</h2>
+
+    <div class="form-group">
+      <input id="nama" placeholder="Nama">
+      <textarea id="pesan" placeholder="Tulis ucapan & doa"></textarea>
+      <button onclick="kirimUcapan()">Kirim Ucapan</button>
+    </div>
+
+    <div id="listUcapan"></div>
+  </section>
+
+  <section>
+    <p>Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i kami ucapkan terima kasih.</p>
+    <p>Wassalamu’alaikum Warahmatullahi Wabarakatuh</p>
+  </section>
+
+  <footer>
     © 2026 Fredi & Puji
-    <p>blnksrc®</p>
-  </p>
-</footer>
+  </footer>
+
 </div>
 
-
-
-<!-- LINK JS -->
+<!-- JS -->
 <script src="script.js"></script>
-
 </body>
 </html>
