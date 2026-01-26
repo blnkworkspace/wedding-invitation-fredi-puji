@@ -586,7 +586,7 @@ button[onclick="copyRek()"] {
 #cover {
   position: fixed;
   inset: 0;
-  background-image: url("images/cover.jpeg"); /* GANTI FOTO */
+  background-image: url("images/cover.png"); /* GANTI FOTO */
   background-size: cover;
   background-position: center;
   z-index: 9999;
