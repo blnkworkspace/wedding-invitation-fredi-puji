@@ -281,5 +281,8 @@ button, a { border-radius: 999px; }
 input, textarea, select { border-radius: 14px; }
 
 .btn-center a {
-  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
+
