@@ -1,6 +1,23 @@
 // VERSI SUPER SIMPLE - PASTI WORK
 const API_URL = "https://script.google.com/macros/s/AKfycbydXi3U_kXe8Cgw49gQDHcKn_3fUBPDIIudleZKZiILU4JfUd05T0wQDOPH73S49o3B/exec";
 
+function openInvitation() {
+  const cover = document.getElementById("cover");
+  const content = document.getElementById("mainContent");
+
+  cover.style.opacity = "0";
+  cover.style.transform = "scale(1.1)";
+
+  setTimeout(() => {
+    cover.style.display = "none";
+    content.classList.remove("hidden");
+    document.body.style.overflow = "auto";
+  }, 800);
+}
+
+// LOCK SCROLL PAS DI COVER
+document.body.style.overflow = "hidden";
+
 // COUNTDOWN (sama seperti sebelumnya)
 const weddingDate = new Date("2026-02-10T10:00:00").getTime();
 setInterval(() => {
