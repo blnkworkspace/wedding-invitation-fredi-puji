@@ -15,15 +15,16 @@ function openInvitation() {
 
 document.body.style.overflow = "hidden";
 
-/* ===== COUNTDOWN ===== */
 const weddingDate = new Date("2026-02-09T10:00:00").getTime();
 
 setInterval(() => {
   const now = new Date().getTime();
   const diff = weddingDate - now;
 
-  if (diff < 0) {
-    document.getElementById("countdown").innerHTML = "Hari Bahagia 💍";
+  const countdownEl = document.getElementById("countdown");
+
+  if (diff <= 0) {
+    countdownEl.innerText = "Hari Bahagia 💍";
     return;
   }
 
@@ -32,9 +33,13 @@ setInterval(() => {
   const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
   const s = Math.floor((diff % (1000 * 60)) / 1000);
 
-  document.getElementById("countdown").innerHTML =
-    `${d} Hari ${h} Jam ${m} Menit ${s} Detik`;
+  // 🔒 PAD DETIK BIAR SELALU 2 DIGIT
+  const pad = n => String(n).padStart(2, "0");
+
+  countdownEl.innerText =
+    `${d}d ${h}h ${pad(m)}m ${pad(s)}s`;
 }, 1000);
+
 
 /* ===== RSVP ===== */
 function kirimRSVP() {
