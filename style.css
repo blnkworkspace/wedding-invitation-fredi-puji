@@ -59,10 +59,10 @@ body::before {
 
 
 .cover-content {
+  display: flex;
+  flex-direction: column; /* ⬅️ INI KUNCI */
+  align-items: center;
   text-align: center;
-  color: white;
-  padding: 20px;
-  animation: fadeSlide 1.4s ease forwards;
 }
 
 @keyframes floatSoft {
