@@ -223,12 +223,36 @@ a:active {
   box-shadow: 0 6px 14px rgba(0,0,0,.2);
 }
 
+h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
 section p {
-  margin: 0.6rem 0;
+  font-size: 1rem;
+  color: #475569;
 }
 
-section h2 {
-  margin: 1.2rem 0 0.4rem;
+section h2 + p {
+  margin-top: 0.6rem;
+}
+
+section p + p {
+  margin-top: 0.5rem;
+}
+
+.btn-rsvp a {
+  background: #2563eb;
+}
+.btn-rsvp a:hover {
+  background: #1e40af;
+}
+
+:focus {
+  outline: 3px solid #93c5fd;
+}
+
+button, a {
+  padding: 14px 32px;
 }
 
 .quote {
