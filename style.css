@@ -218,6 +218,7 @@ iframe {
 
 @media (max-width: 600px) {
   section {
+    max-width: 94%;  
     margin: 1.2rem 1rem; 
     padding: 1.4rem 1.2rem 1.8rem;
   }
