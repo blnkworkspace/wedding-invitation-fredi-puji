@@ -334,19 +334,19 @@ h2 {
 
 /* ===== ANIMATION VARIANT ===== */
 .section-animate[data-anim="fade-up"] {
-  transform: translateY(40px);
+  transform: translateY(80px);
 }
 
 .section-animate[data-anim="fade-left"] {
-  transform: translateX(-40px);
+  transform: translateX(-80px);
 }
 
 .section-animate[data-anim="fade-right"] {
-  transform: translateX(40px);
+  transform: translateX(100px);
 }
 
 .section-animate[data-anim="zoom"] {
-  transform: scale(0.95);
+  transform: scale(0.99);
 }
 
 /* ===== SHOW STATE ===== */
