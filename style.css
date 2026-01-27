@@ -216,6 +216,14 @@ iframe {
   }
 }
 
+@media (max-width: 600px) {
+  section {
+    margin: 1.2rem 1rem; 
+    padding: 1.4rem 1.2rem 1.8rem;
+  }
+}
+
+
 
 footer {
   text-align: center;
@@ -224,12 +232,7 @@ footer {
   padding: 2rem;
 }
 
-@media (max-width: 600px) {
-  section {
-    margin: 1.6rem auto;  
-    padding: 1.6rem 1.4rem 2rem;
-  }
-}
+
 
 
 #rek {
