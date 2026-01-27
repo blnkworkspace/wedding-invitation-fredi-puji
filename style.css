@@ -12,10 +12,20 @@
 }
 
 body {
+  margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(180deg, #1e3a8a, #3b82f6);
-  line-height: 1.7;
+  background: #1e3a8a; /* fallback */
 }
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, #1e3a8a, #3b82f6);
+}
+
+
 
 .hidden {
   display: none;
