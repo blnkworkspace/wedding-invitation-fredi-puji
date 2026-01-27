@@ -85,7 +85,21 @@ body {
 }
 
 /* ===== CONTENT ===== */
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+#mainContent {
+  scroll-snap-type: y mandatory;
+}
+
 section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: white;
   max-width: 720px;
   margin: 1.8rem auto;
@@ -95,6 +109,7 @@ section {
   text-align: center;
   color: var(--dark);
 }
+
 
 h2 {
   font-family: 'Playfair Display', serif;
@@ -353,4 +368,9 @@ h2 {
 .section-animate.show {
   opacity: 1;
   transform: none;
+}
+
+section.no-snap {
+  min-height: auto;
+  scroll-snap-align: unset;
 }
