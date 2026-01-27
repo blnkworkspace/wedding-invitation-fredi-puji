@@ -91,11 +91,27 @@ body::before {
 /* SAVE THE DATE - COUNTDOWN */
 .std-countdown {
   font-family: 'Inter', sans-serif;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 600;
+  white-space: nowrap;      /* 🔒 PALING PENTING */
+  overflow: hidden;
+  text-overflow: ellipsis;
   line-height: 1.4;
-  letter-spacing: 0.01em;
-  white-space: normal;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .std-countdown {
+    font-size: 0.78rem;     /* diperkecil biar MUAT */
+    letter-spacing: 0.01em;
+  }
+}
+
+/* HP kecil banget */
+@media (max-width: 360px) {
+  .std-countdown {
+    font-size: 0.7rem;
+  }
 }
 
 @media (max-width: 600px) {
