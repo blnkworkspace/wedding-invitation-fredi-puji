@@ -539,8 +539,8 @@ h2 {
 
 .atm-card {
  margin: 2.2rem auto 1.6rem;   /* 🔥 turun dikit */
-  padding: 1.6rem 1.8rem;       /* 🔥 kartu lebih tebal */
-  max-width: 380px;             /* 🔥 lebih gede */
+  padding: 2.2rem 2.4rem;       /* 🔥 kartu lebih tebal */
+  max-width: 480px;             /* 🔥 lebih gede */
   border-radius: 20px;
   background: linear-gradient(135deg, #1e3a8a, #3b82f6);
   color: #fff;
@@ -562,7 +562,7 @@ h2 {
 }
 
 .atm-number {
-  font-size: 1.2rem;            /* 🔥 ini penting */
+  font-size: 1.4rem;            /* 🔥 ini penting */
   letter-spacing: .18em;
   margin-bottom: .8rem;
 }
