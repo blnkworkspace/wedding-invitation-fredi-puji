@@ -325,3 +325,32 @@ input, textarea, select { border-radius: 14px; }
 h2 {
   margin-bottom: 0.6rem;
 }
+
+/* ===== BASE (SEMUA SECTION) ===== */
+.section-animate {
+  opacity: 0;
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+/* ===== ANIMATION VARIANT ===== */
+.section-animate[data-anim="fade-up"] {
+  transform: translateY(40px);
+}
+
+.section-animate[data-anim="fade-left"] {
+  transform: translateX(-40px);
+}
+
+.section-animate[data-anim="fade-right"] {
+  transform: translateX(40px);
+}
+
+.section-animate[data-anim="zoom"] {
+  transform: scale(0.95);
+}
+
+/* ===== SHOW STATE ===== */
+.section-animate.show {
+  opacity: 1;
+  transform: none;
+}
