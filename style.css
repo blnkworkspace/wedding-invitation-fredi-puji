@@ -309,3 +309,19 @@ input, textarea, select { border-radius: 14px; }
 }
 
 
+/* ===== HEADING REVEAL ===== */
+.section-animate h2 {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.section-animate.show h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: .15s; /* jeda setelah card muncul */
+}
+
+h2 {
+  margin-bottom: 0.6rem;
+}
