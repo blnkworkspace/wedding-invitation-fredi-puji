@@ -47,6 +47,15 @@ body::before {
   z-index: 9999;
   transition: opacity 1s ease, transform 1s ease;
 }
+.cover-illustration {
+  width: 320px;      
+  max-width: 90%;
+  height: auto;
+  margin: 0 auto 1.6rem;
+  display: block;
+  animation: floatSoft 4s ease-in-out infinite;
+}
+
 
 
 .cover-content {
@@ -54,6 +63,12 @@ body::before {
   color: white;
   padding: 20px;
   animation: fadeSlide 1.4s ease forwards;
+}
+
+@keyframes floatSoft {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
 }
 
 @keyframes fadeSlide {
