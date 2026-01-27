@@ -503,10 +503,36 @@ h2 {
   transform: scale(0.99);
 }
 
+[data-anim="fade-left"] { transform: translateX(-24px); }
+[data-anim="fade-right"] { transform: translateX(24px); }
+[data-anim="fade-up"] { transform: translateY(24px); }
+[data-anim="zoom"]    { transform: scale(0.9); }
+
 /* ===== SHOW STATE ===== */
 .section-animate.show {
   opacity: 1;
   transform: none;
 }
 
+
+.icon {
+  margin-right: .4rem;
+  display: inline-block;
+  animation: bounce 3s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.mini-illu {
+  width: 48px;
+  margin: 0.6rem auto;
+  display: block;
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
 
