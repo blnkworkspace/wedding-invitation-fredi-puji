@@ -199,8 +199,21 @@ iframe {
   margin-bottom: 1.4rem; 
 }
 
-.section-map {
-  margin-bottom: 4rem;
+@media (max-width: 600px) {
+  .section-map {
+    margin-bottom: 0.8rem;  /* ⬅️ rapetin ke RSVP */
+  }
+}
+@media (max-width: 600px) {
+  .section-map iframe {
+    height: 220px; /* sebelumnya biasanya 300–400 */
+  }
+}
+
+@media (max-width: 600px) {
+  .section-map .btn-center {
+    margin-top: 0.6rem;
+  }
 }
 
 
