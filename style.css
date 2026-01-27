@@ -70,7 +70,6 @@ body::before {
   text-align: center;
 }
 
-/* ===== SAVE THE DATE (GLOBAL) ===== */
 .save-the-date {
   margin-top: 1.4rem;
   background: #ffffff;
@@ -78,12 +77,36 @@ body::before {
   padding: 1rem 1.4rem;
   border-radius: 16px;
   box-shadow: 0 10px 24px rgba(0,0,0,.12);
+  text-align: center;
+}
+/* SAVE THE DATE - LABEL */
+.std-label {
   font-family: 'Playfair Display', serif;
-  font-weight: 400;
-  margin-bottom: 0.3rem;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  color: #1e3a8a;
+}
+/* SAVE THE DATE - COUNTDOWN */
+.std-countdown {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  white-space: normal;
+}
+
+@media (max-width: 600px) {
+  .std-countdown {
+    font-size: 0.9rem;     /* ⬅️ ini bikin jadi 2 baris */
+    line-height: 1.35;
+  }
+
+  .save-the-date {
+    width: 90%;
+  }
 }
 
 .cover-subtitle {
