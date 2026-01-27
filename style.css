@@ -95,7 +95,7 @@ html, body {
 }
 
 section {
-  min-height: 100vh;
+  min-height: auto;
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
@@ -103,7 +103,7 @@ section {
   background: white;
   max-width: 720px;
   margin: 1.8rem auto;
-  padding: 2rem;
+  padding: 2.4rem 1.6rem;
   border-radius: 20px;
   box-shadow: 0 20px 45px rgba(0,0,0,.15);
   text-align: center;
@@ -370,7 +370,4 @@ h2 {
   transform: none;
 }
 
-section.no-snap {
-  min-height: auto;
-  scroll-snap-align: unset;
-}
+
