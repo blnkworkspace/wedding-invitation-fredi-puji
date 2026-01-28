@@ -104,3 +104,37 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 sections.forEach(section => observer.observe(section));
+
+
+/* ===== rsvp ===== */
+
+const RSVP_URL = "https://script.google.com/macros/s/AKfycbxuqizqoYWFdlxJZrXmpsgQzKi70XKoYjPGq40mq05bft_Ccu39LNooauB6F04xn_w4Fw/exec";
+
+document.getElementById("rsvpForm").addEventListener("submit", e => {
+  e.preventDefault();
+
+  const form = e.target;
+
+  const data = {
+    nama: form.nama.value,
+    kehadiran: form.kehadiran.value,
+    jumlah_tamu: form.jumlah_tamu.value || "-",
+    pesan: form.pesan.value || "-",
+    user_agent: navigator.userAgent
+  };
+
+  fetch(RSVP_URL, {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(res => res.json())
+  .then(() => {
+    document.getElementById("rsvpStatus").innerText =
+      "Terima kasih, konfirmasi Anda telah tersimpan 🙏";
+    form.reset();
+  })
+  .catch(() => {
+    document.getElementById("rsvpStatus").innerText =
+      "Terjadi kesalahan, silakan coba lagi.";
+  });
+});
