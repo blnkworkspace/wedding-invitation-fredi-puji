@@ -107,14 +107,15 @@ sections.forEach(section => observer.observe(section));
 
 
 /* ===== rsvp ===== */
-
-const RSVP_URL = "https://script.google.com/macros/s/AKfycbxuqizqoYWFdlxJZrXmpsgQzKi70XKoYjPGq40mq05bft_Ccu39LNooauB6F04xn_w4Fw/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbx3ZvJQD1ERZv4Y5Jvpz5UxvW3AYJd5D0w7evRWWZ_3dnZw_FpU3Vb2SIVVBTjy4Isg_Q/exec";
 
 document.getElementById("rsvpForm").addEventListener("submit", e => {
   e.preventDefault();
 
   const form = e.target;
   const status = document.getElementById("rsvpStatus");
+  
+  status.innerText = "Mengirim...";
 
   const data = new FormData();
   data.append("nama", form.nama.value);
@@ -123,15 +124,21 @@ document.getElementById("rsvpForm").addEventListener("submit", e => {
   data.append("pesan", form.pesan.value);
   data.append("ua", navigator.userAgent);
 
+  console.log("Data yang dikirim:", Object.fromEntries(data));
+
   fetch(RSVP_URL, {
     method: "POST",
+    mode: "no-cors", // Tambahkan ini jika ada CORS error
     body: data
   })
   .then(() => {
-    status.innerText = "Terima kasih, konfirmasi terkirim 🙏";
+    status.innerText = "✅ Terima kasih, konfirmasi terkirim 🙏";
+    status.style.color = "green";
     form.reset();
   })
-  .catch(() => {
-    status.innerText = "Gagal mengirim, coba lagi ya 🙏";
+  .catch((error) => {
+    console.error("Error:", error);
+    status.innerText = "❌ Gagal mengirim, coba lagi ya 🙏";
+    status.style.color = "red";
   });
 });
