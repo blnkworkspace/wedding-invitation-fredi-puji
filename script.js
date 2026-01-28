@@ -114,27 +114,24 @@ document.getElementById("rsvpForm").addEventListener("submit", e => {
   e.preventDefault();
 
   const form = e.target;
+  const status = document.getElementById("rsvpStatus");
 
-  const data = {
-    nama: form.nama.value,
-    kehadiran: form.kehadiran.value,
-    jumlah_tamu: form.jumlah_tamu.value || "-",
-    pesan: form.pesan.value || "-",
-    user_agent: navigator.userAgent
-  };
+  const data = new FormData();
+  data.append("nama", form.nama.value);
+  data.append("kehadiran", form.kehadiran.value);
+  data.append("jumlah_tamu", form.jumlah_tamu.value);
+  data.append("pesan", form.pesan.value);
+  data.append("ua", navigator.userAgent);
 
   fetch(RSVP_URL, {
     method: "POST",
-    body: JSON.stringify(data)
+    body: data
   })
-  .then(res => res.json())
   .then(() => {
-    document.getElementById("rsvpStatus").innerText =
-      "Terima kasih, konfirmasi Anda telah tersimpan 🙏";
+    status.innerText = "Terima kasih, konfirmasi terkirim 🙏";
     form.reset();
   })
   .catch(() => {
-    document.getElementById("rsvpStatus").innerText =
-      "Terjadi kesalahan, silakan coba lagi.";
+    status.innerText = "Gagal mengirim, coba lagi ya 🙏";
   });
 });
