@@ -108,7 +108,7 @@ sections.forEach(section => observer.observe(section));
 
 /* ===== rsvp ===== */
 
-const RSVP_URL = "https://script.google.com/macros/s/AKfycbxuqizqoYWFdlxJZrXmpsgQzKi70XKoYjPGq40mq05bft_Ccu39LNooauB6F04xn_w4Fw/exec";
+const RSVP_URL = "https://script.google.com/macros/s/AKfycbydXi3U_kXe8Cgw49gQDHcKn_3fUBPDIIudleZKZiILU4JfUd05T0wQDOPH73S49o3B/exec";
 
 document.getElementById("rsvpForm").addEventListener("submit", e => {
   e.preventDefault();
