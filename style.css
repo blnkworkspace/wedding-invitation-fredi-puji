@@ -572,3 +572,264 @@ h2 {
   opacity: .95;
 }
 
+
+/* ========== UCAPAN FORM ========== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+#submitBtn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  align-self: flex-start;
+}
+
+#submitBtn:hover:not(:disabled) {
+  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+#submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ========== UCAPAN CONTAINER ========== */
+.ucapan-container {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 20px;
+}
+
+.ucapan-container h3 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+/* ========== UCAPAN CARD ========== */
+.ucapan-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  /*border-left: 4px solid #664caf; */
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ucapan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ucapan-nama {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.ucapan-time {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  background: #f1f3f4;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.ucapan-body {
+  margin-top: 8px;
+}
+
+.ucapan-text {
+  margin: 0;
+  color: #34495e;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ========== STATES ========== */
+.ucapan-loading,
+.ucapan-error,
+.ucapan-empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: #666;
+}
+
+.ucapan-error {
+  color: #e74c3c;
+}
+
+.ucapan-empty p:first-child {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.retry-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.retry-btn:hover {
+  background: #2980b9;
+}
+
+/* ========== ALERTS ========== */
+.ucapan-alert {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  color: white;
+  border-radius: 6px;
+  z-index: 1000;
+  animation: slideIn 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.ucapan-alert-success {
+  background: #4CAF50;
+}
+
+.ucapan-alert-error {
+  background: #f44336;
+}
+
+.ucapan-alert-info {
+  background: #2196F3;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .ucapan-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .ucapan-time {
+    align-self: flex-start;
+  }
+  
+  .ucapan-container {
+    padding: 20px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 12px;
+  }
+  
+  #submitBtn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .ucapan-card {
+    padding: 15px;
+  }
+  
+  .ucapan-nama {
+    font-size: 1rem;
+  }
+  
+  .ucapan-time {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* TAMBAHKAN INI DI AKHIR FILE CSS ANDA */
+#submitBtn {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background: #2196F3 !important;
+  color: white !important;
+  border: none !important;
+  padding: 12px 30px !important;
+  border-radius: 6px !important;
+  font-size: 16px !important;
+}
