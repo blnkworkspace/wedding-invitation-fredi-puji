@@ -141,19 +141,23 @@
 
 
   <!-- ===== UCAPAN ===== -->
-  <section class="section-animate" data-anim="zoom">
-    <h2><span class="icon">💬 🙏</span>Ucapan & Doa</h2>
+    <section class="section-animate" data-anim="fade-left">
+      <h2><span class="icon">💬 🙏</span>Ucapan & Doa</h2>
+      
+      <form id="formUcapan">
+        <div class="form-group">
+          <input id="nama" placeholder="Nama" maxlength="100">
+          <textarea id="pesan" placeholder="Tulis ucapan & doa (maks. 500 karakter)" maxlength="500" rows="4"></textarea>
+          <button type="submit" id="submitBtn">Kirim Ucapan</button>
+        </div>
+      </form>
+      
+      <div class="ucapan-container" id="listUcapan">
+        <!-- Ucapan akan dimuat di sini -->
+      </div>
+    </section>
 
-    <div class="form-group">
-      <input id="nama" placeholder="Nama">
-      <textarea id="pesan" placeholder="Tulis ucapan & doa"></textarea>
-      <button onclick="kirimUcapan()">Kirim Ucapan</button>
-    </div>
-
-    <div id="listUcapan"></div>
-  </section>
-
- <section class="section-animate" data-anim="fade-left">
+ <section class="section-animate" data-anim="fade-right">
     <p>Atas kehadiran dan doa restu Bapak/Ibu/Saudara/i kami ucapkan terima kasih.</p>
     <p>Wassalamu’alaikum Warahmatullahi Wabarakatuh</p>
   </section>
