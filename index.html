@@ -97,24 +97,28 @@
 
   <!-- ===== RSVP FORM ===== -->
   
- <section class="section-animate" data-anim="fade-right">
-    <h2><span class="icon">📩</span>Konfirmasi Kehadiran</h2>
+ <section class="section-animate" data-anim="fade-up">
+  <h2>📩 Konfirmasi Kehadiran</h2>
 
-    <div class="form-group">
-      <input id="rsvpNama" placeholder="Nama">
-      <select id="rsvpStatus">
-        <option value="">Pilih Kehadiran</option>
-        <option value="Hadir">Hadir</option>
-        <option value="Tidak Hadir">Tidak Hadir</option>
-      </select>
-      <input id="rsvpJumlah" type="number" min="1" placeholder="Jumlah Tamu (opsional)">
-      <textarea id="rsvpPesan" placeholder="Pesan (opsional)"></textarea>
-      <button onclick="kirimRSVP()">Kirim Konfirmasi</button>
-    </div>
+  <form id="rsvpForm">
+    <input type="text" name="nama" placeholder="Nama" required>
 
-    <div id="listRSVP"></div>
-  
- </section>
+    <select name="kehadiran" required>
+      <option value="">Pilih Kehadiran</option>
+      <option value="Hadir">Hadir</option>
+      <option value="Tidak Hadir">Tidak Hadir</option>
+    </select>
+
+    <input type="number" name="jumlah_tamu" placeholder="Jumlah Tamu" min="1">
+
+    <textarea name="pesan" placeholder="Pesan (opsional)"></textarea>
+
+    <button type="submit">Kirim Konfirmasi</button>
+  </form>
+
+  <p id="rsvpStatus"></p>
+</section>
+
 <!-- ===== Tanda Kasih===== -->
   <section class="section-animate" data-anim="fade-left">
   <h2><span class="icon">🎁</span> Tanda Kasih</h2>
