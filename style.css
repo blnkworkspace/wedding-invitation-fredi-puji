@@ -315,20 +315,6 @@ footer {
 }
 
 
-
-
-#rek {
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-  margin: .5rem 0;
-}
-
-.btn-rek {
-  margin-top: 1.4rem;
-}
-
-
-
 /* ===== SCROLL ANIMATION ===== */
 .section-animate {
   opacity: 0;
@@ -537,52 +523,67 @@ h2 {
   50% { transform: translateY(-6px); }
 }
 
+/* === ATM Card === */
+#rek {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin: .5rem 0;
+}
+
+.btn-rek {
+  margin-top: 0.8rem;
+}
 
 .atm-card {
- margin: 2.2rem auto 1.6rem;   /* 🔥 turun dikit */
-  padding: 2.2rem 2.4rem;       /* 🔥 kartu lebih tebal */
-  max-width: 480px;             /* 🔥 lebih gede */
-  border-radius: 20px;
+  margin: 1.4rem auto 0.9rem;  /* lebih rapat ke section bawah */
+  padding: 1.8rem 2.0rem;           /* tebal tapi gak bulky */
+  max-width: 300px;                  /* proporsi kartu enak di mobile */
+  border-radius: 16px;
   background: linear-gradient(135deg, #1e3a8a, #3b82f6);
   color: #fff;
-  box-shadow: 0 18px 40px rgba(0,0,0,.25);
+  box-shadow: 0 14px 32px rgba(0,0,0,.25);
   text-align: left;
-  transition: transform .3s ease, box-shadow .3s ease;
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .atm-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 50px rgba(0,0,0,.35);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 44px rgba(0,0,0,.32);
 }
 
+/* === TEXT === */
+
 .bank-name {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: .08em;
-  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.8rem;
+  opacity: 0.95;
 }
 
 .atm-number {
-  font-size: 1.4rem;            /* 🔥 ini penting */
-  letter-spacing: .18em;
-  margin-bottom: .8rem;
+  font-size: 1.1rem;                /* fokus utama */
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
 }
 
 .atm-name {
-  font-size: .95rem;
-  opacity: .95;
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 
 
 /* ========== UCAPAN FORM ========== */
 #formUcapan {
-  margin-bottom: 40px;
+  margin-bottom: 5px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   margin-bottom: 30px;
   text-align: center;
   align-items: center;
@@ -620,16 +621,16 @@ h2 {
   background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
   color: white;
   border: none;
-  padding: 16px 48px;
+  padding: 14px 80px;
   border-radius: 50px;
   font-size: 17px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   display: block;
-  margin: 30px auto 0 auto;
-  width: fit-content;
-  min-width: 220px;
+  margin: 12px auto 0 auto;
+  width: auto;
+  min-width: unset;
   box-shadow: 0 6px 24px rgba(30, 58, 138, 0.3);
   font-family: 'Inter', sans-serif;
   letter-spacing: 0.5px;
@@ -674,15 +675,15 @@ h2 {
 
 /* ===== UCAPAN CONTAINER ===== */
 .ucapan-container {
-  background: #f8fafc;
-  border-radius: 16px;
-  padding: 30px;
-  margin-top: 20px;
-  border: 1px solid #e2e8f0;
+  background: hwb(203 0% 93% / 0.5);
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 0;
+  border: 2px solid #e2e8f0;
 }
 
 .ucapan-container h3 {
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   color: #1e293b;
   font-size: 1.4rem;
   text-align: center;
@@ -690,15 +691,16 @@ h2 {
 }
 
 /* ===== UCAPAN CARD ===== */
-.ucapan-card {
-  background: white;
-  border-radius: 12px;
-  padding: 22px;
-  margin-bottom: 18px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  border-left: 4px solid #3b82f6;
+
+ .ucapan-card {
+  background: rgb(255, 255, 255);
+  border-radius: 14px;
+  padding: 20px 22px;          /* lebih seimbang */
+  margin-bottom: 14px;         /* jarak antar card */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+  border-left: 3px solid #3b82f6;
+  transition: transform 0.25s ease;
   animation: fadeInUp 0.5s ease;
-  transition: transform 0.3s ease;
 }
 
 .ucapan-card:hover {
@@ -723,14 +725,14 @@ h2 {
   align-items: flex-start;
   margin-bottom: 12px;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 20px;
 }
 
 .ucapan-nama {
-  margin: 0;
   color: #1e293b;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 4px;
   font-family: 'Inter', sans-serif;
 }
 
@@ -738,24 +740,24 @@ h2 {
   font-size: 0.85rem;
   color: #64748b;
   background: #f1f5f9;
-  padding: 6px 14px;
-  border-radius: 20px;
+  padding: 10px 18px;
+  border-radius: 35px;
   white-space: nowrap;
   font-family: 'Inter', sans-serif;
 }
 
 .ucapan-body {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .ucapan-text {
   margin: 0;
   color: #475569;
-  line-height: 1.7;
+  line-height: 1.75;
   white-space: pre-wrap;
   word-break: break-word;
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 /* ===== STATES ===== */
