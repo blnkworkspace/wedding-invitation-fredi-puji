@@ -2,6 +2,15 @@
 function openInvitation() {
   const cover = document.getElementById("cover");
   const main = document.getElementById("mainContent");
+  const music = document.getElementById("bgMusic");
+  const musicBtn = document.getElementById("musicToggle");
+
+  // play musik (aman karena ada user interaction)
+  if (music) {
+    music.volume = 0.6;
+    music.play().catch(() => {});
+    musicBtn.classList.remove("hidden");
+  }
 
   cover.style.opacity = "0";
   cover.style.transform = "translateY(-40px)";
@@ -13,8 +22,26 @@ function openInvitation() {
   }, 1000);
 }
 
+/* ===== MUSIC TOGGLE ===== */
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicToggle");
+
+if (musicBtn) {
+  musicBtn.addEventListener("click", () => {
+    if (music.paused) {
+      music.play();
+      musicBtn.textContent = "🔊";
+    } else {
+      music.pause();
+      musicBtn.textContent = "🔇";
+    }
+  });
+}
+
+
 document.body.style.overflow = "hidden";
 
+/* ===== Coundown ===== */
 const weddingDate = new Date("2026-02-09T10:00:00").getTime();
 
 setInterval(() => {
