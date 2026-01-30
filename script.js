@@ -5,13 +5,25 @@ function openInvitation() {
   const music = document.getElementById("bgMusic");
   const musicBtn = document.getElementById("musicToggle");
 
-  // play musik (aman karena ada user interaction)
+  // ===== PLAY MUSIC + FADE IN =====
   if (music) {
-    music.volume = 0.6;
+    music.volume = 0;
     music.play().catch(() => {});
     musicBtn.classList.remove("hidden");
+
+    let vol = 0;
+    const fade = setInterval(() => {
+      vol += 0.05;
+      if (vol >= 0.6) {
+        music.volume = 0.6;
+        clearInterval(fade);
+      } else {
+        music.volume = vol;
+      }
+    }, 120);
   }
 
+  // ===== ANIMASI COVER =====
   cover.style.opacity = "0";
   cover.style.transform = "translateY(-40px)";
 
@@ -19,8 +31,9 @@ function openInvitation() {
     cover.style.display = "none";
     main.classList.remove("hidden");
     document.body.style.overflow = "auto";
-  }, 1000);
+  }, 1600);
 }
+
 
 /* ===== MUSIC TOGGLE ===== */
 const music = document.getElementById("bgMusic");
