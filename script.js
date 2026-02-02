@@ -1,201 +1,147 @@
-/* ===== OPEN INVITATION ===== */
+/* ======================================================
+   OPEN INVITATION (COVER → MAIN)
+====================================================== */
 function openInvitation() {
   const cover = document.getElementById("cover");
   const main = document.getElementById("mainContent");
   const music = document.getElementById("bgMusic");
   const musicBtn = document.getElementById("musicToggle");
 
-  // ===== PLAY MUSIC + FADE IN =====
+  // play music (allowed by user gesture)
   if (music) {
-    music.volume = 0;
+    music.volume = 0.6;
     music.play().catch(() => {});
-    musicBtn.classList.remove("hidden");
-
-    let vol = 0;
-    const fade = setInterval(() => {
-      vol += 0.05;
-      if (vol >= 0.6) {
-        music.volume = 0.6;
-        clearInterval(fade);
-      } else {
-        music.volume = vol;
-      }
-    }, 120);
+    if (musicBtn) musicBtn.classList.remove("hidden");
   }
 
-  // ===== ANIMASI COVER =====
+  // fade out cover
   cover.style.opacity = "0";
-  cover.style.transform = "translateY(-40px)";
+  cover.style.pointerEvents = "none";
 
   setTimeout(() => {
     cover.style.display = "none";
     main.classList.remove("hidden");
+
+    // pastikan masuk ke awal undangan
+    window.scrollTo({ top: 0 });
+
     document.body.style.overflow = "auto";
-  }, 1600);
+  }, 600);
 }
 
+/* ======================================================
+   MUSIC TOGGLE
+====================================================== */
+const bgMusic = document.getElementById("bgMusic");
+const musicToggle = document.getElementById("musicToggle");
 
-/* ===== MUSIC TOGGLE ===== */
-const music = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicToggle");
-
-if (musicBtn) {
-  musicBtn.addEventListener("click", () => {
-    if (music.paused) {
-      music.play();
-      musicBtn.textContent = "🔊";
+if (musicToggle && bgMusic) {
+  musicToggle.addEventListener("click", () => {
+    if (bgMusic.paused) {
+      bgMusic.play();
+      musicToggle.textContent = "🔊";
     } else {
-      music.pause();
-      musicBtn.textContent = "🔇";
+      bgMusic.pause();
+      musicToggle.textContent = "🔇";
     }
   });
 }
 
-
-document.body.style.overflow = "hidden";
-
-/* ===== Coundown ===== */
+/* ======================================================
+   COUNTDOWN
+====================================================== */
 const weddingDate = new Date("2026-02-09T10:00:00").getTime();
+const countdownEl = document.getElementById("countdown");
 
 setInterval(() => {
-  const now = new Date().getTime();
+  if (!countdownEl) return;
+
+  const now = Date.now();
   const diff = weddingDate - now;
 
-  const countdownEl = document.getElementById("countdown");
-
   if (diff <= 0) {
-    countdownEl.innerText = "Hari Bahagia 💍";
+    countdownEl.textContent = "Hari Bahagia 💍";
     return;
   }
 
   const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const s = Math.floor((diff % (1000 * 60)) / 1000);
+  const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const m = Math.floor((diff / (1000 * 60)) % 60);
+  const s = Math.floor((diff / 1000) % 60);
 
-  // 🔒 PAD DETIK BIAR SELALU 2 DIGIT
-  const pad = n => String(n).padStart(2, "0");
-
-  countdownEl.innerText =
-    `${d}d ${h}h ${pad(m)}m ${pad(s)}s`;
+  countdownEl.textContent =
+    `${d}d ${h}h ${String(m).padStart(2,"0")}m ${String(s).padStart(2,"0")}s`;
 }, 1000);
 
 
-/* ===== RSVP ===== */
-function kirimRSVP() {
-  const nama = rsvpNama.value;
-  const status = rsvpStatus.value;
-  const jumlah = rsvpJumlah.value;
-  const pesan = rsvpPesan.value;
+/* ======================================================
+   SCROLL ANIMATION (SECTION)
+====================================================== */
+const sections = document.querySelectorAll(".section-animate");
 
-  if (!nama || !status) {
-    alert("Nama dan status wajib diisi");
-    return;
-  }
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
 
-  const card = document.createElement("div");
-  card.className = "ucapan-card";
-  card.innerHTML = `
-    <h4>${nama}</h4>
-    <p><strong>Status:</strong> ${status}</p>
-    ${jumlah ? `<p>Jumlah Tamu: ${jumlah}</p>` : ""}
-    ${pesan ? `<p>${pesan}</p>` : ""}
-  `;
-  listRSVP.prepend(card);
+sections.forEach(sec => observer.observe(sec));
 
-  rsvpNama.value = rsvpStatus.value = rsvpJumlah.value = rsvpPesan.value = "";
-}
-
-/* ===== UCAPAN ===== */
-function kirimUcapan() {
-  const nama = document.getElementById("nama").value;
-  const pesan = document.getElementById("pesan").value;
-
-  if (!nama || !pesan) return alert("Nama dan ucapan wajib diisi");
-
-  const card = document.createElement("div");
-  card.className = "ucapan-card";
-  card.innerHTML = `<h4>${nama}</h4><p>${pesan}</p>`;
-  document.getElementById("listUcapan").prepend(card);
-
-  document.getElementById("nama").value = "";
-  document.getElementById("pesan").value = "";
-}
-
-/* ===== COPY REKENING ===== */
+/* ======================================================
+   COPY REKENING
+====================================================== */
 function copyRek() {
   navigator.clipboard.writeText("6862010115207530");
   alert("Nomor rekening berhasil disalin");
 }
 
-
-/* ===== SCROLL SECTION ANIMATION ===== */
-const sections = document.querySelectorAll('.section-animate');
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target); // animasi sekali aja
-    }
-  });
-}, {
-  threshold: 0.2
-});
-
-sections.forEach(section => observer.observe(section));
-
-
-/* ===== rsvp ===== */
+/* ======================================================
+   RSVP (GOOGLE APPS SCRIPT)
+====================================================== */
 const RSVP_API = "https://script.google.com/macros/s/AKfycbx3ZvJQD1ERZv4Y5Jvpz5UxvW3AYJd5D0w7evRWWZ_3dnZw_FpU3Vb2SIVVBTjy4Isg_Q/exec";
 
-document.getElementById("rsvpForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+const rsvpForm = document.getElementById("rsvpForm");
+if (rsvpForm) {
+  rsvpForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  const form = e.target;
-  const status = document.getElementById("rsvpStatus");
-  const submitBtn = form.querySelector('button[type="submit"]');
+    const status = document.getElementById("rsvpStatus");
+    const submitBtn = rsvpForm.querySelector('button[type="submit"]');
 
-  // Disable button
-  submitBtn.disabled = true;
-  submitBtn.textContent = "Mengirim...";
-  status.innerText = "Mengirim konfirmasi...";
-  status.style.color = "blue";
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Mengirim...";
+    status.textContent = "Mengirim konfirmasi...";
+    status.style.color = "blue";
 
-  try {
-    // Prepare data
-    const formData = new FormData();
-    formData.append("nama", form.nama.value);
-    formData.append("kehadiran", form.kehadiran.value);
-    formData.append("jumlah_tamu", form.jumlah_tamu.value || "0");
-    formData.append("pesan", form.pesan.value);
+    const formData = new FormData(rsvpForm);
     formData.append("ua", navigator.userAgent);
 
-    console.log("Mengirim ke Google Apps Script...");
+    try {
+      await fetch(RSVP_API, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+      });
 
-    // Kirim dengan fetch
-    await fetch(RSVP_API, {
-      method: "POST",
-      mode: "no-cors",
-      body: formData
-    });
+      status.innerHTML = "✅ <strong>Terima kasih!</strong><br>Konfirmasi berhasil dikirim 🙏";
+      status.style.color = "green";
+      rsvpForm.reset();
 
-    // Success
-    status.innerHTML = "✅ <strong>Terima kasih!</strong><br>Konfirmasi kehadiran berhasil dikirim 🙏";
-    status.style.color = "green";
-    form.reset();
-
-  } catch (error) {
-    console.error("Error:", error);
-    status.innerHTML = "❌ <strong>Gagal mengirim</strong><br>Silakan coba lagi atau hubungi kami";
-    status.style.color = "red";
-  } finally {
-    // Reset button
-    submitBtn.disabled = false;
-    submitBtn.textContent = "Kirim Konfirmasi";
-  }
-});
-
+    } catch {
+      status.innerHTML = "❌ <strong>Gagal mengirim</strong><br>Silakan coba lagi";
+      status.style.color = "red";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Kirim Konfirmasi";
+    }
+  });
+}
 
 /* ===== ucapan ===== */
 const API_URL = "https://script.google.com/macros/s/AKfycbwOvihcVv1mVKiSB2Ps3vF_lCNOY7z5i3f3ZDpof9FXyF5Xgou10QLgvRDgZ83_d3ir/exec";
@@ -463,4 +409,22 @@ class UcapanSystem {
 let ucapanSystem;
 document.addEventListener('DOMContentLoaded', () => {
   ucapanSystem = new UcapanSystem();
+});
+
+
+
+/* ======================================================
+   PARALLAX FOTO COUPLE (SINGLE SOURCE)
+====================================================== */
+window.addEventListener("scroll", () => {
+  const photo = document.querySelector(".couple-photo-landscape img");
+  if (!photo) return;
+
+  const rect = photo.getBoundingClientRect();
+  const winH = window.innerHeight;
+
+  if (rect.top < winH && rect.bottom > 0) {
+    const offset = (rect.top - winH / 2) * 0.04;
+    photo.style.transform = `translateY(${offset}px) scale(1.04)`;
+  }
 });
