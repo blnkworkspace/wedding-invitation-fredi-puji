@@ -50,7 +50,7 @@ if (musicToggle && bgMusic) {
 /* ======================================================
    COUNTDOWN
 ====================================================== */
-const weddingDate = new Date("2026-02-09T10:00:00").getTime();
+const weddingDate = new Date("2026-02-10T10:00:00").getTime();
 const countdownEl = document.getElementById("countdown");
 
 setInterval(() => {
