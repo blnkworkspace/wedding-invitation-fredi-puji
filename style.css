@@ -14,7 +14,12 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #1e3a8a; /* fallback */
+    background: linear-gradient(
+    180deg,
+    #d1d5db,   /* light warm grey */
+    #9ca3af    /* deeper grey */
+  );
+
 }
 
 h1, h2, h3,
@@ -27,206 +32,130 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(180deg, #1e3a8a, #3b82f6);
+    background: linear-gradient(
+    180deg,
+    #d1d5db,   /* light warm grey */
+    #9ca3af    /* deeper grey */
+  );
+
 }
-
-
 
 .hidden {
   display: none;
 }
 
-/* ===============================
-   LANDING PAGE – FINAL
-   Foto kiri | Teks kanan
-================================ */
-
-/* CONTAINER */
-.cover-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+.cover-single {
   min-height: 100vh;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 6vh 5vw;
-  gap: 48px;
-}
-
-/* LEFT – PHOTO */
-.cover-right {
-  display: flex;
-  justify-content: center;
-}
-
-.cover-photo {
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 24px 50px rgba(0,0,0,.35);
-}
-
-.cover-photo img {
-  width: 100%;
-  max-width: 360px;
-  display: block;
-  transform: scale(1.03);
-}
-
-/* RIGHT – TEXT */
-.cover-left {
+  background: linear-gradient(180deg, #dde1e5, #cfd5db);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  padding: 6vh 6vw;
   text-align: center;
-  max-width: 420px;
-  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
 }
 
-/* ORDER VISUAL (tanpa ubah HTML) */
-.cover-eyebrow { order: 1; }
-.cover-title   { order: 2; }
-.cover-date    { order: 3; }
-.save-the-date { order: 4; }
-.btn-open      { order: 5; }
+.hero-illustration {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    #f5f1ea 0%,
+    #e6e0d7 70%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 26px;
+  box-shadow:
+    0 22px 50px rgba(0,0,0,.18),
+    inset 0 0 0 6px rgba(255,255,255,.6);
+  overflow: hidden; /* 🔥 WAJIB */
+}
+
+
+.hero-illustration img {
+  width: 98%;              /* ⬅️ ZOOM */
+  height: auto;
+  display: block;
+  transform: translateY(-4px); /* ⬅️ NAIKIN dikit */
+  background: transparent;
+  box-shadow: none;
+}
+
+
+
+/* EMOTIONAL TEXT */
+.cover-emotion {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #6b7280; /* abu medium */
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
 
 /* EYEBROW */
 .cover-eyebrow {
-  font-family: 'Inter', sans-serif;
-  color: rgba(255,255,255,0.85);
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  opacity: 0.8;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: .22em;
+  font-size: .75rem;
+  color: #2b2b2b; /* kontras utama */
   margin-bottom: 6px;
 }
 
 /* TITLE */
 .cover-title {
   font-family: 'Playfair Display', serif;
-  color: rgba(255,255,255,0.85);
   font-size: 42px;
-  font-weight: 600;
-  line-height: 1.25;
-  margin: 6px 0;
+  color: #374151;
+  margin-bottom: 6px;
 }
 
 /* DATE */
 .cover-date {
-  font-family: 'Inter', sans-serif;
-  color: rgba(255,255,255,0.85);
-  font-size: 0.95rem;
-  opacity: 0.85;
+  font-family: 'Playfair Display', serif;
+  color: #374151;
   margin-bottom: 22px;
 }
 
 /* SAVE THE DATE */
 .save-the-date {
-  background: rgba(255,255,255,0.9);
-  color: #1e3a8a;
-  padding: 0.9rem 1.3rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 24px rgba(0,0,0,.12);
+  font-family: 'Playfair Display', serif;
+  background: white;
+  padding: 14px 22px;
+  border-radius: 18px;
   margin-bottom: 18px;
-  text-align: center;
+  box-shadow: 0 14px 34px rgba(0,0,0,.18);
 }
 
-.std-label {
-  font-family: 'Playfair Display', serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-
-/* COUNTDOWN */
-.std-countdown {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-/* CTA BUTTON */
+/* CTA */
 .btn-open {
-  margin-top: 26px;
-  padding: 13px 34px;
-  border-radius: 999px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  background: #ffffff;
-  color: #1e3a8a;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 16px 40px rgba(0,0,0,.25);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-
-.btn-open:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 18px 34px rgba(0,0,0,.28);
-}
-
-.cover-emotion {
   font-family: 'Playfair Display', serif;
-  font-size: 0.95rem;
-  font-style: italic;
-  color: rgba(255,255,255,.85);
-  line-height: 1.7;
-  margin: 10px 0 22px;
+  padding: 14px 36px;
+  border-radius: 999px;
+  border: none;
+  background: white;
+  color: #1e3a8a;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(0,0,0,.25);
 }
 
-.cover-photo::after {
-  content: "";
+.cover-flower-left {
   position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(0,0,0,0) 55%,
-    rgba(0,0,0,.35)
-  );
+  bottom: -40px;
+  left: -30px;
+  width: 280px;
+  opacity: 0.55;
   pointer-events: none;
+  z-index: 0;
+  
 }
 
-.cover-title::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 2px;
-  background: rgba(255,255,255,.35);
-  margin: 14px auto 0;
-}
-
-@media (max-width: 480px) {
-  .cover-left {
-    padding-top: 12px;
-  }
-
-  .cover-emotion {
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-  }
-}
-
-
-
-/* ===============================
-   MOBILE RESPONSIVE
-================================ */
-@media (max-width: 768px) {
-  .cover-split {
-    grid-template-columns: 1fr;
-    gap: 36px;
-    text-align: center;
-  }
-
-  /* FOTO KE ATAS DI MOBILE */
-  .cover-right {
-    order: -1;
-  }
-
-  .cover-title {
-    font-size: 32px;
-  }
-}
 
 
 
