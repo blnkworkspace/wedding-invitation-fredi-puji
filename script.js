@@ -429,19 +429,34 @@ window.addEventListener("scroll", () => {
   }
 });
 
-/* ======================================================
-   GALERY
-====================================================== */
- const modal = document.getElementById("galleryModal");
-  const modalImg = document.getElementById("galleryModalImg");
 
-  document.querySelectorAll(".gallery-grid img").forEach(img => {
-    img.addEventListener("click", () => {
-      modalImg.src = img.src;
-      modal.classList.remove("hidden");
-    });
-  });
+/* ===== CINEMATIC REVEAL ===== */
+const galleryItems = document.querySelectorAll('.gallery-item');
 
-  modal.addEventListener("click", () => {
-    modal.classList.add("hidden");
+const galleryObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      galleryObserver.unobserve(entry.target);
+    }
   });
+}, { threshold: 0.25 });
+
+galleryItems.forEach(i => galleryObserver.observe(i));
+
+/* ===== FULLSCREEN PREVIEW ===== */
+const modal = document.getElementById('galleryModal');
+const modalImg = document.getElementById('galleryModalImg');
+
+galleryItems.forEach(item => {
+  item.addEventListener('click', () => {
+    modal.classList.add('show');
+    modalImg.src = item.querySelector('img').src;
+  });
+});
+
+modal.addEventListener('click', () => {
+  modal.classList.remove('show');
+});
+
+  
