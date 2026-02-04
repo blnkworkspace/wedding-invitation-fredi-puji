@@ -428,3 +428,20 @@ window.addEventListener("scroll", () => {
     photo.style.transform = `translateY(${offset}px) scale(1.04)`;
   }
 });
+
+/* ======================================================
+   GALERY
+====================================================== */
+ const modal = document.getElementById("galleryModal");
+  const modalImg = document.getElementById("galleryModalImg");
+
+  document.querySelectorAll(".gallery-grid img").forEach(img => {
+    img.addEventListener("click", () => {
+      modalImg.src = img.src;
+      modal.classList.remove("hidden");
+    });
+  });
+
+  modal.addEventListener("click", () => {
+    modal.classList.add("hidden");
+  });
