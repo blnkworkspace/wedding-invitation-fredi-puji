@@ -97,7 +97,7 @@ sections.forEach(sec => observer.observe(sec));
    COPY REKENING
 ====================================================== */
 function copyRek() {
-  navigator.clipboard.writeText("6862010115207530");
+  navigator.clipboard.writeText("686201015207530");
   alert("Nomor rekening berhasil disalin");
 }
 
